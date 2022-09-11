@@ -1,3 +1,4 @@
+export type MoreProducts = typeof productsData.edges;
 export const productsData = {
 	edges: [
 		{
