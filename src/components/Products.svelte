@@ -1,6 +1,4 @@
 <script lang="ts">
-	import type { LOGNAME } from '$env/static/private';
-
 	import type { MoreProducts } from 'src/utils/products';
 	import Search from '../components/Search.svelte';
 	import { getFromApi } from '../utils/api';
@@ -25,16 +23,11 @@
 
 <main>
 	<Search on:input={handleChange} />
-	
+
 	<div class="grid">
 		{#each filteredProducts as { node: product }}
 			<div class="item1">
-				<img
-					src={`${product.image}?imwidth=175`}
-					alt={product.name}
-					class="image"
-					loading="lazy"
-				/>
+				<img src={`${product.image}?imwidth=175`} alt={product.name} class="image" loading="lazy" />
 				<span class="text">{product.name}</span>
 				<span class="text">
 					{product.prices.baseUnit}
